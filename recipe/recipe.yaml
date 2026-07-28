@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   python_min: "3.10"
-  version: "1.6.0"
+  version: "1.7.0"
 
 package:
   name: oda-reader
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/o/oda-reader/oda_reader-${{ version }}.tar.gz
-  sha256: 30bf38fc247d02a9d296d9022aebd3f2db8537ff9daeddf11a8a16d274da108e
+  sha256: bd1d4656b45759930ead44bd1a1added4e17a1235a320923a5d6812862dda727
 
 build:
   number: 0
