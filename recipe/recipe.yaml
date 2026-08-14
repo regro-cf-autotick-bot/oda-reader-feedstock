@@ -1,8 +1,8 @@
 schema_version: 1
 
 context:
-  python_min: "3.11"
-  version: "1.9.0"
+  python_min: "3.12"
+  version: "1.10.0"
 
 package:
   name: oda-reader
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/o/oda-reader/oda_reader-${{ version }}.tar.gz
-  sha256: 5687c104ed6c0965e0349aec678a9d649244356844bbede12c39245e471592e6
+  sha256: 166b3ec53866d3e60a5637400da1b4cad15e367477ed9ffcc16177eef3d45cef
 
 build:
   number: 0
@@ -20,7 +20,7 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
-    - uv-build >=0.9.15,<0.10
+    - uv-build >=0.11.8,<0.12
     - pip
   run:
     - python >=${{ python_min }}
@@ -29,9 +29,8 @@ requirements:
     - joblib >=1.4
     - openpyxl >=3.1.0
     - pandas >=2.2.0
-    - pandas-stubs ~=2.3.3
-    - platformdirs >=4.5.0
     - pyarrow >=23.0.1
+    - readerkit >=0.1.0
     - requests >=2.33.0
     - requests-cache >=1.2.0
 
@@ -39,6 +38,9 @@ tests:
   - python:
       imports:
         - oda_reader
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - pip
